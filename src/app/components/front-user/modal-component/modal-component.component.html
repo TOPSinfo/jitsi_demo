@@ -1,0 +1,75 @@
+<ngx-smart-modal #userInfoModal identifier="userInfoModal" [closable]="false" customClass="custom-margin"
+    [dismissable]="false">
+    <div class="modal-body">
+        <div class="card">
+            <h4 class="card-header text-center">Please Enter Below Details</h4>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <form [formGroup]="userInfoForm" (ngSubmit)="submit()">
+                            <div class="form-group">
+                                <!-- <label>FullName</label> -->
+                                <input type="text" class="form-control" placeholder="Full Name"
+                                    formControlName="fullname">
+                                <div *ngIf="submitForm && form.fullname.errors" class="text-danger error-label">
+                                    <div *ngIf="form.fullname.errors.required" class="text-left f-80per"> Please enter your name</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <!-- <label>Subject</label> -->
+                                <input type="text" class="form-control" placeholder="Subject" formControlName="subject">
+                                <div *ngIf="submitForm && form.subject.errors" class="text-danger error-label">
+                                    <div *ngIf="form.subject.errors.required" class="text-left f-80per"> Please enter subject</div>
+                                </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <button class="btn btn-primary btn-width blue-btn">
+                                    <!-- <span class="spinner-border spinner-border-sm mr-1"></span> -->
+                                    Connect Now
+                                </button>
+                                <!-- <input type="submit" class="btn" value="Connect Now" name=""> -->
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ngx-smart-modal>
+
+<ngx-smart-modal #callConnectingModal identifier="callConnectingModal" [closable]="false" customClass="custom-margin"
+    [dismissable]="false">
+    <div class="modal-body">
+        <div>
+            <h2 class="f-1-half">Your call is being connected, Please wait for some time</h2>
+        </div>
+    </div>
+</ngx-smart-modal>
+
+<ngx-smart-modal #callConnectedModal identifier="callConnectedModal" [closable]="false" customClass="connected"
+    [dismissable]="false">
+    <div class="modal-header">
+        <span class="connected-header">
+            You are connected with {{adminUserName}}
+        </span>
+    </div>
+    <div class="modal-body">
+        <iframe allow="microphone https://meet.jit.si; camera https://meet.jit.si;" style='width: 100%;height: 100%;' #iframe [src]="meetUrl"></iframe>
+    </div>
+</ngx-smart-modal>
+
+<ngx-smart-modal #infoModal identifier="infoModal" [closable]="true" customClass="info" [dismissable]="false">
+    <div class="modal-body">
+        <h2>{{message}}</h2>
+    </div>
+</ngx-smart-modal>
+
+<ngx-smart-modal #callOnHoldModal identifier="callOnHoldModal" [closable]="false" customClass="custom-margin"
+    [dismissable]="false">
+    <div class="modal-body">
+        <div>
+            <h2>Your call is On Hold, Please Call After Some time...!!!</h2>
+        </div>
+    </div>
+</ngx-smart-modal>

@@ -1,0 +1,86 @@
+<div class="container-fluid mt-4 mb-4">
+     <a routerLink="/admin/user-list" style="margin-left: auto;display: table; font-size: 14px;"
+                            *ngIf="showUsersTag" class="btn btn-primary mb-2">Manage User</a>
+    <div class="row">
+        <div class="col-md-6">
+           
+            <div class="card">
+                <h4 class="card-header text-center text-capitalize">{{userInfo.name}}'s Call History</h4>
+                <div class="card-body height-100">
+                    <!-- <div class="row pull-right mb-1">
+                        
+                    </div> -->
+                    <div>
+                        <div class="table-responsive">
+                            <table class="table table-striped table-hover f-14">
+                                <thead>
+                                    <tr *ngIf="!loading">
+                                        <th>CustomerName</th>
+                                        <th>Subject</th>
+                                        <th class="text-center">Duration</th>
+                                        <th>CallTime</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="sortable-row">
+                                    <tr *ngIf="calls.length == 0">
+                                        <td colspan="9">
+                                            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                                            <span *ngIf="!loading">No data found.</span>
+                                        </td>
+                                    </tr>
+                                    <tr *ngFor="let call of calls">
+                                        <td nowrap="nowrap" *ngIf="call.username">{{call.username}}
+                                        </td>
+                                        <td nowrap="nowrap" *ngIf="!call.username"> - </td>
+                                        <td *ngIf="call.subject">{{call.subject}}
+                                        </td>
+                                        <td *ngIf="!call.subject">-
+                                        </td>
+                                        <td nowrap="nowrap" *ngIf="call.duration" class="text-center">{{call.duration}}
+                                        </td>
+                                        <td nowrap="nowrap" *ngIf="!call.duration"> - </td>
+                                        <td nowrap="nowrap" *ngIf="call.create_date">
+                                            {{call.create_date | date:"yyyy MMMM dd 'at' hh:mm a"}} </td>
+                                        <td nowrap="nowrap" *ngIf="!call.create_date"> - </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card">
+                <h4 class="card-header text-center text-capitalize">Average Rating</h4>
+                <div class="card-body height-100">
+                    <div class="row" *ngIf="!loading">
+                        <div class="text-center" style="width: 100%;">                        
+                            <ngb-rating [starTemplate]="t" [halfStars]="true" [(rate)]="avgRating" [readonly]="true"></ngb-rating>
+                        </div>
+                        <span class="text-center" style="width: 100%;">
+                            <!-- <h4><b>{{avgRating}}</b> stars out of <b>{{rating}}</b> (<b>{{reviews}}</b> reviews)</h4> -->
+                            <h4 class="f-14">(<b>{{reviews}}</b> reviews)</h4>
+                            <!-- <ngb-rating [(rate)]="rating"></ngb-rating> -->
+                        </span>
+                        <div>
+                            <!-- <input name="message" [value]="message" placeholder="Feedback Message"> -->
+                        </div>
+                        <!-- <button type="button" (click)="submit()">Submit</button> -->
+                    </div>
+
+                    <h4 class="card-header text-center text-capitalize mt-3">Average Rating</h4>
+                    <div></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #t let-fill="fill">
+    <span *ngIf="fill === 100" class="star full">&#9733;</span>
+    <span *ngIf="fill === 0" class="star">&#9733;</span>
+    <span *ngIf="fill < 100 && fill > 0" class="star">
+      <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+    </span>
+  </ng-template>

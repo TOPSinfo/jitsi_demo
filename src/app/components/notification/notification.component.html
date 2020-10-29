@@ -1,0 +1,24 @@
+<ngx-smart-modal #notifyAdminModal identifier="notifyAdminModal" [closable]="false" customClass="custom-margin"
+    [dismissable]="false">
+    <div class="modal-body">
+        <div *ngIf="acceptObj && acceptObj.frontUserInfo">
+            <p>{{acceptObj.frontUserInfo.fullname}} wants to connect to you for </p>
+            <p>{{acceptObj.frontUserInfo.subject}}</p>
+            <button type="button" class="btn btn-primary" (click)="accept()">Accept</button>
+            <button type="button" class="btn btn-danger" (click)="reject()">Reject</button>
+            <!-- <a class="btn-link d-flex" (click)="accept()"><img src="assets\call.png" alt="" width="40"></a>
+            <a class="btn-link d-flex" (click)="reject()"><img src="assets\call-disconnect.png" alt="" width="40"></a> -->
+        </div>
+    </div>
+</ngx-smart-modal>
+
+<ngx-smart-modal #jitsiMeet identifier="jitsiMeet" [closable]="false" customClass="meet-popup" [dismissable]="false">
+    <div class="modal-header" *ngIf="frontUserName">
+        <span class="connected-header">
+            You are connected with {{frontUserName}}
+        </span>
+    </div>
+    <div class="modal-body">
+        <div id="meet" class="meet"></div>
+    </div>
+</ngx-smart-modal>

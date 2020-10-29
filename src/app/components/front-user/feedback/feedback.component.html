@@ -1,0 +1,29 @@
+<ngx-smart-modal #feedbackModal identifier="feedbackModal" [closable]="false" customClass="custom-margin"
+    [dismissable]="false">
+    <div class="modal-body experience-body">
+        <div>
+            <h2 class="title mb-3"> Please Rate Your Experience</h2>
+            <div>
+                <ngb-rating style="font-size: 2.5rem;" [(rate)]="rating"></ngb-rating>
+            </div>
+            <!-- <div>
+                <input name="message" [value]="message" placeholder="Feedback Message">
+            </div> -->
+            <button type="button" (click)="submit()" class="btn btn-primary btn-width blue-btn mt-5">Submit</button>
+        </div>
+    </div>
+</ngx-smart-modal>
+
+<ngx-smart-modal #thankyouModal identifier="thankyouModal" [closable]="false" customClass="custom-margin"
+    [dismissable]="false">
+    <div class="modal-body thank-u-body">
+        <div>
+            <h2 class="title"> Thank For Your Review</h2>
+            <h5 class="title"> Have a Good Day!</h5>
+            <img width="100" height="100" src="https://image.flaticon.com/icons/svg/927/927566.svg" class="mb-4">
+            <div>
+                <button type="button" (click)="goToHome()" class="btn btn-primary btn-width blue-btn">Home</button>
+            </div>
+        </div>
+    </div>
+</ngx-smart-modal>

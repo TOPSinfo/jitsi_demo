@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~ngx-smart-modal/ngx-smart-modal";
+
+.form-control{
+	border: 0;
+	border-bottom: 1px solid #ced4da;
+	border-radius: 0;
+	border-width: 2px;
+	padding-right: 0; 
+	padding-left: 0;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #495057;
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+  font-size: 14px;
+}
+
+.form-control:focus,.form-control.is-invalid:focus{
+	outline: 0;
+	box-shadow: none;
+}
+
+.blue-btn{
+	background: #1026a6;
+	border-radius: 5px;
+	border-color: #1026a6;
+}
+.blue-btn:hover{
+	opacity: 0.8;
+}
+
+h4.card-header{
+  font-size: 17px;
+}
+
+.thank-u-body{
+	height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.thank-u-body h2.title{
+	font-size: 40px;
+}
+
+.thank-u-body h5.title{
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+
+.call-window{
+	height: calc(100vh - 106px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.f-80per{
+	font-size: 80%;
+}
+
+.experience-body{
+	height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-1-half{
+	font-size: 1.5rem;
+}

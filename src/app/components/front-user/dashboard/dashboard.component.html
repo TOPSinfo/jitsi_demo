@@ -1,0 +1,23 @@
+<div class="container-fluid mt-4 mb-4">
+  <div class="card">
+    <!-- <h4 class="card-header text-center">Login</h4> -->
+    <div class="card-body call-window">
+      <div class="row">
+        <div class="col-md-12">
+          <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group text-center">
+              <h2 class="title">Welcome to Tops Info Solutions Pvt. Ltd.</h2>
+              <button [disabled]="loading" class="btn btn-primary btn-width blue-btn">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                Connect Call
+              </button>
+              <app-feedback></app-feedback>
+              <!-- <a routerLink="../register" class="btn btn-link">Register</a> -->
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <app-modal-component></app-modal-component>
+  </div>
+</div>

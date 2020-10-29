@@ -1,0 +1,36 @@
+.modal-dialog { width: 730px; max-width: 730px; margin-bottom: 50px; }
+.modal-body { padding: 0; text-align: center; }
+button { width: 45%; margin-top: 30px; margin: 10px; }
+.nsm-content{ margin: 50px auto; margin-top: 100px; padding: 10px; border-radius: .25rem; }
+
+.connected .nsm-content {
+height: 100%; width: 100%; margin: 50px auto 0; margin-top: 20px;
+}
+.connected { 
+    height: calc(100% - 40px);
+    max-width: 97%;
+    margin-left: auto;
+}
+.connected .modal-body {
+    height: calc(100% - 58px);
+}
+.connected .modal-body iframe{
+    border: 0;
+}
+.nsm-dialog-btn-close {
+    top: 0;
+    right: 0;
+    text-align: right;
+    margin: 4px 10px 10px 10px;
+    width: 25px;
+}
+.connected-header {
+    width: 100%;
+    text-align: center;
+    font-size: 24px;
+    margin: 5px 0 17px 0;
+}
+
+.connected .modal-header{
+    padding: 0 1rem;
+}
